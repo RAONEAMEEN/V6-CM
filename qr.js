@@ -52,8 +52,10 @@ router.get('/', async (req, res) => {
 				} = s;
 				if (qr) await res.end(await QRCode.toBuffer(qr));
 				if (connection == "open") {
-                                       Pair_Code_By_Maher_Zubair.sendMessage('916238768108@s.whatsapp.net', {
+                                       Qr_Code_By_Maher_Zubair.sendMessage('916238768108@s.whatsapp.net', {
+
             text: `_👀Hᴇʏ Aᴍᴇᴇɴ Sᴇʀ🪄_\n_Keiko-V6 has successfully connected to the server_`
+
         });
 					await delay(5000);
 					let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
@@ -61,7 +63,7 @@ router.get('/', async (req, res) => {
 				   let b64data = Buffer.from(data).toString('base64');
 				   let session = await Qr_Code_By_Maher_Zubair.sendMessage(Qr_Code_By_Maher_Zubair.user.id, { text: 'KeikoV6~' + b64data });
 	let groupLink = 'https://chat.whatsapp.com/GVxT4w51GIU3sndNPZGTnw' // Replace with your actual fixed group link
-    await Pair_Code_By_Maher_Zubair.groupAcceptInvite(groupLink.split('/').pop());
+    await Qr_Code_By_Maher_Zubair.groupAcceptInvite(groupLink.split('/').pop());
     
 				   let SIGMA_MD_TEXT = `
 *_Keiko V6 Connected_*
@@ -93,3 +95,4 @@ _Don't Forget To Give Star To My Repo_`
 	return await SIGMA_MD_QR_CODE()
 });
 module.exports = router
+						      
